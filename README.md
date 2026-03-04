@@ -10,5 +10,5 @@
     </td>
   </tr>
 </table>
-
+![Snake animation](https://github.com/luaraujoo/luaraujoo/blob/output/github-contribution-grid-snake.svg)
 
