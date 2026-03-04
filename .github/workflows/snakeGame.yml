@@ -1,47 +1,43 @@
-# Nome da Actions:  
 name: Snake Game
 
-# Controlador do tempo que sera feito a atualização dos arquivos.
 on:
   schedule:
-      # Será atualizado a cada 5 horas.
+    # Atualiza a cada 5 horas
     - cron: "0 */5 * * *"
-
-# Permite executar na na lista de Actions (utilizado para testes de build).
+  # Permite execução manual
   workflow_dispatch:
+  # Executa a cada push na branch master (opcional, mas recomendado)
+  push:
+    branches:
+      - master
 
-# Regras
 jobs:
-  build:
+  generate:
+    permissions: 
+      contents: write
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
     steps:
+      # Checkout do repositório
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    # Checks repo under $GITHUB_WORKSHOP, so your job can access it
-      - uses: actions/checkout@v2
-
-    # Repositorio que será utilizado para gerar os arquivos.
-      - uses: Platane/snk@master
-        id: snake-gif
+      # Gera o jogo da cobrinha (Versão atualizada do Platane/snk)
+      - name: Generate Snake Files
+        uses: Platane/snk@v3
         with:
-          github_user_name: luaraujoo 
-          gif_out_path: dist/github-contribution-grid-snake.gif
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake.gif
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - run: git status
-
-      # Para as atualizações.
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      # Faz o deploy para a branch 'output' de forma moderna
+      - name: Push GitHub contribution grid snake game to the output branch
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
-          force: true
-
-      - uses: crazy-max/ghaction-github-pages@v2.1.3
-        with:
-          # the output branch we mentioned above
           target_branch: output
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
