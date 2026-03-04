@@ -10,5 +10,13 @@
     </td>
   </tr>
 </table>
-![Snake animation](https://github.com/luaraujoo/luaraujoo/blob/output/github-contribution-grid-snake.svg)
-
+<br/>
+<div align="center">
+  <table border="1">
+    <tr>
+      <td style="border: 1px solid white; padding: 10px; background-color: #0d1117;">
+        <img src="https://raw.githubusercontent.com/luaraujoo/luaraujoo/output/github-contribution-grid-snake-dark.svg?v=2" alt="Snake animation" width="100%" />
+      </td>
+    </tr>
+  </table>
+</div>
