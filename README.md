@@ -1,19 +1,17 @@
 ![Header](./github-header-banner.png)
 <h1>hello, i'm...</h1>
-### About Me
-
 <table>
   <tr>
     <td width="70%">
-      <b>🇧🇷 Estudante de Engenharia de Software </b><br><br>
+      <b>🇧🇷  Estudante de Engenharia de Software </b><br><br>
       <ul>
         ⭐Experiência com Python, C e fundamentos de Estrutura de Dados.</br>
         ⭐Atualmente desenvolvendo uma solução para a área da saúde.</br>
         ⭐Buscando estágio em desenvolvimento back-end com foco em APIs e banco de dados.</li>
       </ul>
     </td>
-    <td width="30%">
-      <img src="./gif-lua-perfilGit" alt="gif-lua-perfilGit.gif" width="100%">
+    <td width="20%">
+      <img src="https://github.com/luaraujoo/luaraujoo/blob/main/gif-lua-perfilGit.gif" alt="gif-lua-perfilGit.gif" width="100%">
     </td>
   </tr>
 </table>
